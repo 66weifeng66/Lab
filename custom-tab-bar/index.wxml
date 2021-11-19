@@ -1,0 +1,10 @@
+<view class="box">
+  <view class="cu-bar tabbar bg-white">
+    <view class="action" wx:for="{{list}}" wx:key="index" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab" style="color: {{selected === index ? '#0081ff;' : '#8799a3;'}}" >
+      <view class="{{selected === index ? item.selectedIconPath : item.iconPath}}">
+      <!-- <view wx:if="{{index == '2'}}" class="cu-tag badge">99</view> -->
+      </view>
+      {{item.text}}
+      </view>
+  </view>
+</view>
