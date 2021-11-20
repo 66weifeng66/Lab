@@ -1,0 +1,59 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">用户注册</view>
+</cu-custom>
+<view style="margin: 10rpx 16rpx;">
+  <form >
+	<!-- <view class="cu-form-group margin-top">
+	<view class="grid col-3 grid-square flex-sub" style="margin-top:12rpx;">
+		<view></view>
+		<view wx:if="{{avatar === ''}}" class="solids" bindtap="ChooseImage">
+			<text class="cuIcon-cameraadd"></text>
+		</view>
+		<view class="bg-img" wx:else bindtap="ViewImage">
+			<image  src="{{ 'http://localhost:8086/file/downloadImageByName?filename=' + avatar}}" mode='aspectFill'></image>
+			<view class="cu-tag bg-red" catchtap="DelImg">
+					<text class="cuIcon-close"></text>
+				</view>
+		</view>
+	</view>
+</view> -->
+	<view class="cu-form-group">
+		<view class="title">用户名</view>
+		<input placeholder="请输入用户名" value="{{username}}" bindinput="usernameInput"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">密码</view>
+		<input placeholder="请输入密码" value="{{password}}" bindinput="passwordInput"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">手机号</view>
+    <input placeholder="请输入手机号" value="{{phoneNum}}" type="number" bindinput="phoneNumInput"></input>
+    <view class="cu-capsule radius">
+			<view class="cu-tag bg-blue">
+				+86
+			</view>
+			<view class="cu-tag line-blue">
+				中国大陆
+			</view>
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">年龄</view>
+		<input placeholder="请输入年龄" value="{{age}}" bindinput="ageInput"></input>
+	</view>
+	<view class="cu-form-group ">
+		<view class="title">性别</view>
+		<picker bindchange="sexChange" value="{{sexIndex}}" range="{{sex}}">
+			<view class="picker">
+				{{sexIndex?sex[sexIndex]:'请选择性别'}}
+			</view>
+		</picker>
+	</view>
+</form>
+
+<view class="padding">
+  <button class="cu-btn block bg-blue margin-tb-sm lg"  type="" bindtap="submit">提交</button>
+</view>
+
+</view>

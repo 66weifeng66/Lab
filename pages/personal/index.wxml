@@ -1,0 +1,37 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">个人信息</view>
+</cu-custom>
+<view style="margin: 10rpx 16rpx;">
+  <form >
+		<view class="cu-form-group margin-top">
+	<view class="grid col-3 grid-square flex-sub" style="margin-top:12rpx;">
+		<view></view>
+		<view class="bg-img" bindtap="ViewImage">
+			<image  src="{{avatar_url}}" mode='aspectFill'></image>
+		</view>
+	</view>
+</view>
+	<view class="cu-form-group margin-top">
+		<view class="title">用户名:{{username}}</view>
+		
+	</view>
+	<view class="cu-form-group">
+		<view class="title">星标数:{{stared  == null ? '暂无' : stared}}</view>	
+	</view>
+	<view class="cu-form-group">
+		<view class="title">博客:{{blog == null ? '暂无' : blog}}</view>	
+	</view>
+	<view class="cu-form-group">
+		<view class="title">微博:{{weibo == null ? '暂无' : weibo}}</view>	
+	</view>
+	<view class="cu-form-group">
+		<view class="title">查看数量:{{watched  == null ? '暂无' : watched}}</view>	
+	</view>
+</form>
+
+<!-- <view class="padding">
+  <button class="cu-btn block bg-blue margin-tb-sm lg"  type="" bindtap="submit">提交修改</button>
+</view> -->
+
+</view>

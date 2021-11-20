@@ -1,0 +1,10 @@
+<!--pages/fileDetail/index.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">文件内容</view>
+</cu-custom>
+<view>
+<view class="padding text-black text-xl" style="padding: 30rpx 40rpx;padding-bottom: 50rpx;">
+  {{text}}
+</view>
+</view>

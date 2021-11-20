@@ -1,0 +1,22 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">Gitee用户登录</view>
+</cu-custom>
+<view class="cu-card case " style="margin-top:90rpx;">
+  <view class="cu-item shadow">
+    <form>
+	<view class="cu-form-group margin-top">
+		<view class="title">用户名</view>
+		<input placeholder="请输入Gitee用户邮箱" value="{{username}}" bindinput="usernameInput"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">密码</view>
+		<input placeholder="请输入Gitee用户密码" value="{{password}}" password='true' bindinput="passwordInput"></input>
+  </view>
+</form>
+<view class="padding" style="border-top: 1rpx solid #eee;padding-top:60rpx;">
+  <button class="cu-btn block bg-blue margin-tb-sm lg"  type="" bindtap="submit">登录</button>
+</view>
+</view>
+<!-- <view class=" margin-tb-sm " style="margin-left:28rpx;"  type="" bindtap="register">没有账号？去注册</view> -->
+</view>

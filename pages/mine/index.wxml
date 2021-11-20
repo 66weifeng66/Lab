@@ -1,0 +1,29 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">个人中心</view>
+</cu-custom>
+<view class="bg-white radius shadow shadow-lg">
+  <view class="flex justify-center" wx:if="{{username == null}}">
+    <view class="cu-btn shadow" style="margin:120rpx 10rpx;" bindtap="login">登录</view>
+  </view>
+  <view  wx:else >
+    <view class="cu-list menu-avatar" >
+      <view class="cu-item" style="margin-left:40%;margin-top:30rpx;" >
+        <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+        <image class="cu-avatar round lg"  src="{{avatar_url}}" mode="aspectFill" ></image>
+      </view>
+      <view class="">
+          <view class="text-grey" style="margin-left:42%;margin-bottom:34rpx;">欢迎：{{username}}</view>
+        </view>
+    </view>
+  </view>
+</view>
+
+<view class="cu-list menu margin-top">
+  <navigator class="cu-item arrow" url="/pages/personal/index" open-type="navigate">
+        <!-- <image src="/images/logo.png" class="png" mode="aspectFit"></image> -->
+      <view class="content" hover-class="none" >
+        <text class="cuIcon-people text-olive"></text>
+        <text class="text-grey">个人信息</text>
+      </view>
+    </navigator>
+    </view>

@@ -1,0 +1,39 @@
+<!--pages/tieba/index.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">贴吧</view>
+</cu-custom>
+
+<view class="cu-card dynamic">
+  <navigator class="cu-item shadow" wx:for="{{tiebaList}}" wx:key="id" 
+  url="/pages/tiebaDetail/index?id={{item.id}}&tiebaContents={{item.tiebaContents}}&reviewers={{item.reviewers}}&avatarUrl={{item.avatarUrl}}&createTime={{item.createTime}}">
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url({{item.avatarUrl}});"></view>
+        <view class="content flex-sub">
+          <view>{{item.reviewers}}</view>
+          <view class="text-gray text-sm flex justify-between">
+            {{item.createTime}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="text-content">
+      {{item.tiebaContents}}
+    </view>
+    <view class="text-gray text-sm text-right padding">
+      <!-- <text class="cuIcon-attentionfill margin-lr-xs"></text> 10 -->
+      <!-- <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20 -->
+      <!-- <text class="cuIcon-messagefill margin-lr-xs"></text> 30 -->
+    </view>
+  </navigator>
+</view>
+
+<view class="cu-bar" style="position: fixed;bottom: 50rpx;right: 10rpx;">
+  <view class="action">
+    <button class="cu-btn icon lg  bg-gradual-blue" bindtap="toNewTieBa">
+       <text class="cuIcon-add text-white lg"></text>
+   </button>
+    <!-- <text class="cuIcon-add text-blue"></text> -->
+  </view>
+</view>

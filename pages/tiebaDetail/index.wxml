@@ -1,0 +1,69 @@
+<!--pages/tiebaDetail/index.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">详情</view>
+</cu-custom>
+
+<view class="cu-card dynamic no-card">
+  <view class="cu-item shadow">
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url({{avatarUrl}});"></view>
+        <view class="content flex-sub">
+          <view>{{reviewers}}</view>
+          <view class="text-gray text-sm flex justify-between">
+            {{createTime}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="text-content">
+      {{tiebaContents}}
+    </view>
+    <view class="text-gray text-sm text-right padding">
+      <!-- <text class="cuIcon-attentionfill margin-lr-xs"></text> 10 -->
+      <!-- <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20 -->
+      <!-- <text class="cuIcon-messagefill margin-lr-xs"></text> 30 -->
+    </view>
+  </view>
+</view>
+
+<!-- 评论专区 -->
+<view class="cu-bar bg-white solid-bottom" style="margin-top: 12rpx;">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>评论
+  </view>
+</view>
+<view wx:if="{{commentsList.length === 0}}" style="text-align: center;margin: 50rpx 30rpx;">暂无评论</view>
+<view class="cu-list menu-avatar comment sm-border" >
+    <view class="cu-item  solid-bottom" style="padding-bottom: 0rpx;padding-top: 0rpx;" wx:for="{{commentsList}}" wx:key="id" >
+      <view class="cu-avatar round" style="background-image:url({{item.avatarUrl}});"></view>
+        <view class="content">
+          <view class="text-grey">{{item.reviewers}}</view>
+          <view class="text-gray text-content text-df">
+            {{item.comments}}
+          </view>
+          <!-- <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
+            <view class="flex">
+              <view>凯尔：</view>
+              <view class="flex-sub">妹妹，你在帮他们给黑暗找借口吗?</view>
+            </view>
+          </view> -->
+          <view class="margin-top-sm flex justify-between">
+            <view class="text-gray text-df">{{item.createTime}}</view>
+            <view>
+              <!-- <text class="cuIcon-messagefill text-gray margin-left-sm"></text> -->
+            </view>
+          </view>
+        </view>
+    </view>
+</view>
+<view style="margin-top: 16rpx;">
+  	<view class="cu-form-group align-start">
+		<view class="title">评论</view>
+		<textarea maxlength="-1"  bindinput="textareaBInput" placeholder="请输入"></textarea>
+	</view>
+  <view style="margin: 2rpx 10rpx;">
+    <button  class="cu-btn round bg-green shadow margin-tb-sm lg block" bindtap="submit">提交</button>
+  </view>
+</view>

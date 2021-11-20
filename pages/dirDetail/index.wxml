@@ -1,0 +1,24 @@
+<!--pages/dirDetail/index.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content"></view>
+</cu-custom>
+<view class="cu-list menu sm-border" >
+  <view class="cu-item  solid-bottom" style="padding-bottom: 0rpx;padding-top: 0rpx;" wx:for="{{result.tree}}" wx:key="id" >
+      <view class="content">
+        <text class="cuIcon-text text-blue" style="font-size: 32rpx;" wx:if="{{item.type != 'tree'}}"></text>
+        <text wx:else class="cuIcon-read text-grey"  style="font-size: 32rpx;"></text>
+        <text  wx:if="{{item.type != 'tree'}}" class="text-blue"  style="font-size: 32rpx;" data-sha="{{item.sha}}" bindtap="toFileDetail">{{item.path}}</text>
+        <text  wx:else class="text-grey"  style="font-size: 32rpx;" data-sha="{{item.sha}}" bindtap="toDirDetail">{{item.path}}</text>
+        <view>
+        </view>
+      </view>
+      <!-- <view class="action" wx:if="{{item.type != 'tree'}}">
+        <view class="cu-tag round bg-olive light" data-path="{{item.path}}" bindtap="downloadFile" >下载</view>
+      </view> -->
+  </view>
+</view>
+<view class="padding">
+<button wx:if="{{showUpload}}" class="cu-btn round bg-green shadow margin-tb-sm lg block" bindtap="uploadFile">
+  <text class="cuIcon-upload"></text> 上传</button>
+</view>

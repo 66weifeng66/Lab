@@ -1,0 +1,42 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">首页</view>
+</cu-custom>
+<!-- 搜索 -->
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="输入搜索的关键词" confirm-type="search" value="{{q}}" bindinput="bindinputKey"></input>
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-gradual-green shadow-blur round" bindtap="searchKey">搜索</button>
+    <button style="margin-left: 10rpx;" class="cu-btn bg-gradual-blue shadow-blur round" bindtap="toTieBa">贴吧</button>
+  </view>
+</view>
+<view class="indexes" style="margin-top:calc({{CustomBar}}px - 13px);margin-bottom: calc({{CustomBar}}px - 13px);">
+  <view class="cu-list menu sm-border" >
+  <navigator class="cu-item  solid-bottom" style="padding-bottom: 8rpx;padding-top: 6rpx;" wx:for="{{searchList}}" wx:key="id" 
+  url="/pages/repoDetail/index?owner={{item.namespace.path}}&repo={{item.path}}&showUpload=false&id={{item.id}}">
+    <!-- <navigator url="/pages/searchDetail/index?id={{item.id}}"> -->
+      <view class="content">
+        <text class="text-black " style="font-size: 34rpx;font-weight: 30rpx;">{{item.full_name}}</text>
+        <view class="text-grey">{{item.description}}</view>
+        <view>
+        <view class="cu-tag round" style="font-size: 18rpx;">{{item.language}}</view>
+        <view class="cu-capsule round" style="margin-left: 16rpx;" style="font-size: 18rpx;">
+          <view class="cu-tag bg-grey " style="font-size: 16rpx;margin-left: 16rpx;">
+            <text class="cuIcon-favorfill"></text>
+          </view>
+          <view class="cu-tag line-grey" style="font-size: 16rpx;">
+            {{item.stargazers_count}}
+          </view>
+        </view>
+        </view>
+      </view>
+    <!-- </navigator> -->
+  </navigator>
+</view>
+<!-- <view>
+  <view class="cu-tag radius">上一页</view>
+  <view class="cu-tag radius">下一页</view>
+</view> -->
+</view>

@@ -1,0 +1,15 @@
+<!--pages/newTieBa/index.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">新建贴吧</view>
+</cu-custom>
+<!-- 新建贴吧 -->
+<view style="margin-top: 16rpx;">
+  	<view class="cu-form-group align-start">
+		<!-- <view class="title">贴吧</view> -->
+		<textarea maxlength="-1"  bindinput="textareaBInput" placeholder="请输入贴吧内容"></textarea>
+	</view>
+  <view style="margin: 2rpx 10rpx;">
+    <button  class="cu-btn round bg-green shadow margin-tb-sm lg block" bindtap="submit">提交</button>
+  </view>
+</view>

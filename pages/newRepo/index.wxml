@@ -1,0 +1,33 @@
+<!--pages/newRepo/index.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">新建仓库</view>
+</cu-custom>
+<view style="margin: 10rpx 16rpx;">
+  <form >
+	<view class="cu-form-group">
+		<view class="title">仓库名</view>
+		<input placeholder="请输入仓库名" value="{{name}}" bindinput="nameInput"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">仓库描述</view>
+		<textarea placeholder="请输入仓库描述" value="{{description}}" bindinput="descriptionInput"></textarea>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">主页(eg: https://gitee.com)</view>
+		<input placeholder="请输入主页" value="{{homepage}}" bindinput="homepageInput"></input>
+	</view>
+	<view class="cu-form-group ">
+		<view class="title">是否公开</view>
+		<picker bindchange="privateChange" value="{{privateIndex}}" range="{{privateList}}">
+			<view class="picker">
+				{{privateIndex?privateList[privateIndex]:'请选择仓库属性'}}
+			</view>
+		</picker>
+	</view>
+</form>
+
+<view class="padding">
+  <button class="cu-btn block bg-blue margin-tb-sm lg"  type="" bindtap="submit">提交</button>
+</view>
+</view>
